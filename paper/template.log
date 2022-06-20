@@ -1,0 +1,300 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.16)  19 JUN 2022 23:24
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**template
+(./template.tex
+LaTeX2e <2022-06-01> pre-release-0 (develop 2022-6-16 branch)
+L3 programming layer <2022-06-02>
+
+LaTeX Info: File `example.eps' already exists on the system.
+            Not generating it from this source.
+
+(./svjour2.cls
+Document Class: svjour2 2005/08/29 v2.8 
+LaTeX document class for Springer journals
+(c:/texlive/2022/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\skip47
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+)
+Class Springer-SVJour2 Info: extra/valid Springer sub-package (-> *.clo) 
+(Springer-SVJour2)           not found in option list of \documentclass
+(Springer-SVJour2)           - autoactivating "global" style.
+ (./svglov2.clo
+File: svglov2.clo 2004/10/25 v2.1 style option for standardised journals
+
+SVJour Class option: svglov2.clo for standardised journals
+)
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 142.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 144.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 146.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 150.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 151.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 152.
+\logodepth=\dimen138
+\headerboxheight=\dimen139
+\betweenumberspace=\dimen140
+\aftertext=\dimen141
+\headlineindent=\dimen142
+\c@inst=\count181
+\c@auth=\count182
+\instindent=\dimen143
+\authrun=\box51
+\authorrunning=\toks16
+\titrun=\box52
+\titlerunning=\toks17
+\combirun=\box53
+\c@lastpage=\count183
+\rubricwidth=\dimen144
+\c@section=\count184
+\c@subsection=\count185
+\c@subsubsection=\count186
+\c@paragraph=\count187
+\c@subparagraph=\count188
+\spthmsep=\dimen145
+\c@theorem=\count189
+\c@case=\count190
+\c@conjecture=\count191
+\c@corollary=\count192
+\c@definition=\count193
+\c@example=\count194
+\c@exercise=\count195
+\c@lemma=\count196
+\c@note=\count197
+\c@problem=\count198
+\c@property=\count199
+\c@proposition=\count266
+\c@question=\count267
+\c@solution=\count268
+\c@remark=\count269
+\c@figure=\count270
+\c@table=\count271
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\figcapgap=\dimen146
+\tabcapgap=\dimen147
+\figgap=\dimen148
+\bibindent=\dimen149
+\@tempcntc=\count272
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/04/16 v5.0m Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+) (./biograph.sty
+Package: biograph 2004/07/08 v. 3.0
+) (c:/texlive/2022/texmf-dist/tex/latex/mwe/mwe.sty
+Package: mwe 2018/03/30 v0.5 Package to support minimal working examples (MWE)
+ (c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty (c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-06-02 L3 programming layer (loader) 
+ (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-04-20 L3 backend support: XeTeX
+\g__graphics_track_int=\count273
+\l__pdf_internal_box=\box54
+\g__pdf_backend_object_int=\count274
+\g__pdf_backend_annotation_int=\count275
+\g__pdf_backend_link_int=\count276
+))
+Package: l3keys2e 2022-06-07 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count277
+\l__lipsum_a_int=\count278
+\l__lipsum_b_int=\count279
+ (c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (c:/texlive/2022/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+ (c:/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count280
+\c@Blindtext=\count281
+\c@blind@countparstart=\count282
+\blind@countxx=\count283
+\blindtext@numBlindtext=\count284
+\blind@countyy=\count285
+\c@blindlist=\count286
+\c@blindlistlevel=\count287
+\c@blindlist@level=\count288
+\blind@listitem=\count289
+\c@blind@listcount=\count290
+\c@blind@levelcount=\count291
+\blind@mathformula=\count292
+\blind@Mathformula=\count293
+\c@blind@randomcount=\count294
+\c@blind@randommax=\count295
+\c@blind@pangramcount=\count296
+\c@blind@pangrammax=\count297
+)) (c:/texlive/2022/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (c:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (c:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen152
+\captionmargin=\dimen153
+\caption@leftmargin=\dimen154
+\caption@rightmargin=\dimen155
+\caption@width=\dimen156
+\caption@indent=\dimen157
+\caption@parindent=\dimen158
+\caption@hangindent=\dimen159
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\captionstyle \ifx \@captype \fig@type \vskip \figcapgap \fi \setbox \@tempboxa \hbox {{\floatlegendstyle #1\floatcounterend }\capstrut #2}\ifdim \wd \@tempboxa >\hsize {\floatlegendstyle #1\floatcounterend }\capstrut #2\par \else \hbox to\hsize {\leftlegendglue \unhbox \@tempboxa \hfil }\fi \ifx \@captype \fig@type \else \vskip \tabcapgap \fi  on input line 1176.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count298
+\c@continuedfloat=\count299
+)
+\c@KVtest=\count300
+\sf@farskip=\skip50
+\sf@captopadj=\dimen160
+\sf@capskip=\skip51
+\sf@nearskip=\skip52
+\c@subfigure=\count301
+\c@subfigure@save=\count302
+\c@lofdepth=\count303
+\c@subtable=\count304
+\c@subtable@save=\count305
+\c@lotdepth=\count306
+\sf@top=\skip53
+\sf@bottom=\skip54
+) (./template.aux)
+\openout1 = `template.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 59.
+ (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Calculating math sizes for size <8.7> on input line 83.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.34999> not available
+(Font)              size <5> substituted on input line 83.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.34999> not available
+(Font)              size <5> substituted on input line 83.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.34999> not available
+(Font)              size <5> substituted on input line 83.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8.7> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6.08997> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.34999> on input line 83.
+LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.2> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.13995> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.09999> on input line 83.
+
+LaTeX Warning: Citation `test:1' on page 1 undefined on input line 97.
+
+
+Overfull \hbox (3.26381pt too wide) in paragraph at lines 103--107
+\TU/lmr/m/n/10.2 games, an AI should be trained to learn how the melodies
+ []
+
+
+LaTeX Warning: Citation `test:2' on page 1 undefined on input line 119.
+
+File: ./pics/fullSong.PNG Graphic file (type bmp)
+<./pics/fullSong.PNG>
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 126--127
+ [][] 
+ []
+
+File: ./pics/pitch.PNG Graphic file (type bmp)
+<./pics/pitch.PNG>
+File: ./pics/step.PNG Graphic file (type bmp)
+<./pics/step.PNG>
+File: ./pics/duration.PNG Graphic file (type bmp)
+<./pics/duration.PNG>
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--180
+
+ []
+
+[1
+
+
+]
+File: example.eps Graphic file (type eps)
+<example.eps>
+File: example.eps Graphic file (type eps)
+<example.eps>
+
+No file template.bbl.
+File: example.eps Graphic file (type eps)
+<example.eps>
+[2] [3] (./template.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.65001pt have occurred.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3515 strings out of 475885
+ 66113 string characters out of 5806093
+ 480776 words of memory out of 5000000
+ 24546 multiletter control sequences out of 15000+600000
+ 471154 words of font info for 43 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 87i,12n,91p,314b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on template.pdf (3 pages).
