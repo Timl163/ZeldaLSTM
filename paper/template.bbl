@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{test:1}
+Home {\textbar} {Beethoven} {X} - {The} {AI} {Project}.
+\newblock \urlprefix\url{https://www.beethovenx-ai.com}
+
+\end{thebibliography}

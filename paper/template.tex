@@ -108,7 +108,7 @@ music notes and a new melody.
 \section{Training Data}
 \label{trainingdata}
 
-To train the AI, music files in any form are needed. Single instrument
+To train the AI, music files of any form are needed. Single instrument
 midi files are an easy way to train said AI. Midi (Musical Instrument Digital
 Interface) is a technical standard that describes a communication protocoll
 among other things to connect a wide variety of music instruments and other
@@ -143,7 +143,7 @@ the length of the pause between the note and the note being played before).
 Figure ~\ref{fig:verteilung} shows the distribution of pitch, step and duration
 of all notes in the song "The Legend of Zelda - Death Mountain". The usage of 
 low notes in contrast to really high notes is one of the key elements of 
-the music of the Zelda games. Furthermore you can see, that the duration of
+the thrilling music of the Zelda games. Furthermore you can see, that the duration of
 the notes are mostly short with only some outlier. 
 
 \begin{figure}
@@ -163,71 +163,207 @@ the notes are mostly short with only some outlier.
 \label{fig:verteilung}   
 \end{figure}
 
+So that the AI can be trained, the music data needs to be edited and sequences with a given 
+length need to be created. A tensorflow dataset is created and filled with all notes (pitch, step and duration).
+To create sequences out of all the notes, the tensorflow dataset function "window" is used. It is used to 
+create sequence windows of all available data and works by only seeing a window of data with given size, saving
+it to a dataset of datasets and shifting the window to the next datapoint, creating a new window.
+The sequence size is variable and dialed in at 50. This means, that a sequence consists of 50 notes and 
+one result note as a label. The LSTM network learns what note should be played dependent on the 50 notes that were
+played before.
 
 
+After creating a dataset of datasets, it is necesarry to transform these into tensors, so that the network can
+use them. The function "flat\_map" creates tensors from the dataset. The function to create sequences also normilizes 
+the pitch of the notes to match the 128 possible pitches supported by "PrettyMidi". The new creates tensorflow dataset
+has a shape of (50, 3) meaning that the dataset has multiple sequences which consist of 50 notes each. The notes consist
+of three parameters (pitch, duration and step).
 
+The last part of preparing the dataset is to combine consecutive elements of the dataset into batches and to configure
+the dataset for performance. First the current dataset is shuffled and then saved in batches. After that the function
+"prefetch" is called on the dataset. It creates a new dataset that prefetches elements from this dataset. It allows later 
+elements to be prepared while the current element is being processed [quellellsflksdfhd].
 
+\section{Model}
+\label{model}
 
+After preparing the training dataset it is necessary to create and train the model. To create the model the now in tensorflow
+embedded library "Keras" is used. The model will have one input layer with the shape of the created dataset. It also needs 
+to have three outputs, one for each note variable.
 
-- grundlagen\\
-- datensatz\\
-- wie wird der datensatz aufbereitet\\
-- wie wierd dsa modell aufgebaut\\
-- ausfuehren\\
-- loss funktion\\
-- verteilung noten vorher nachher\\
-- conclusion\\
+A custom loss function for the step and the duration of the notes is needed. It is based on the mean squared error loss function
+with positive pressure to ensure, that the model predicts mostly positive values for the step and duration. 
 
-\section{Section title}
-\label{sec:1}
-%%Citations \cite{Ref1} and \cite{Ref2} and \cite{Ref3}.
-\subsection{Subsection title}
-\label{sec:2}
-as required. Don't forget to give each section
-and subsection a unique label (see Sect.~\ref{sec:1}).
-\paragraph{Paragraph headings} Use paragraph headings as needed.
-\begin{equation}
-a^2+b^2=c^2
-\end{equation}
+The complete used model is shown in Figure \ref{fig:model}. It consists of an input layer with the input shape of the training data.
+Furthermore it uses multiple LSTM layers that take a sequence as an input and can either return a sequence or a matrix. Dropout layers are
+used to minimize overfitting the model because of the relativly small dataset used. Dropout layers randomly sets the input units to 0
+at each step during training. This way the model will not be prone to overfitting. Dense layers are fully connected neural network
+layers, where each input node is connected to each output node. Three dense layers are used as the output. The pitch output has 128 nodes 
+which represent all the notes that can be used by "PrettyMidi". The duration and step layer only have one output node which
+directly shows a float value. This value should be positive and a custum loss function with positive pressure is needed to train
+for those outputs (s. o.). The loss function "SparseCategoricalCrossentropy" is used for the pitch. The model is compiled with
+an optimizer that implements the Adam algorithm and uses a learning rate of 0.0001.
 
-% For one-column wide figures use
+The last LSTM layer isnt configured to return a sequence but a matrix. This way the output is flattened and dense layers can be connected.
+The model has 2,793,602 configurable parameters and describes a rather small neural network.
+
 \begin{figure}
 \centering
+\includegraphics[width=0.5\textwidth]{./pics/model_plot.png}
+\caption{Model}
+\label{fig:model}    
+\end{figure}
+
+\section{Training}
+\label{training}
+
+After creating and compiling the model it is time to train it. First the starting loss values of each parameter is calculated. The following losses
+are calculated:
+
+\begin{itemize}
+  \item loss: 5.442152976989746
+  \begin{itemize}
+  \item duration: 0.4956154227256775
+  \item pitch: 4.851800918579102
+  \item step: 0.094735287129879
+  \end{itemize}
+\end{itemize}
+
+The pitch loss is sigificant greater then the loss of step and duration. The overall loss is calculated by adding all losses together.
+To combat this, the model need to be compiled with loss weights. The pitch loss is multiplied by 0.05 and the following losses 
+are calculated:
+
+\begin{itemize}
+  \item loss: 0.8329412937164307
+  \begin{itemize}
+  \item duration: 0.4956154227256775
+  \item pitch: 4.851800918579102
+  \item step: 0.094735287129879
+  \end{itemize}
+\end{itemize}
+
+Callback functions are used to create checkpoints of the model after aech epoch it is running through. The weights from the model
+are saved and the training can be halted and continued to not loose progress. Early stopping is also configured, to stop the 
+training if multiple consecutive epochs do not lead to the reduction of the overall loss. This also helps if the loss suddenly
+jumps to a higher value. Lowering the learning rate helped combat negative jumps of the overall loss.
+
+After the configuration, the model is trained for a maximum of 500 epochs. Figure \ref{fig:loss} shows the progress of the 
+overall loss over the generations. The training was halted after about 270 epochs because of no further change of the overall loss.
+The training took about an hour of GPU processing time. The final overall loss is 0.0338.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{./pics/Loss.PNG}
+\caption{Added up loss over training generations}
+\label{fig:loss}    
+\end{figure}
+
+\section{Music Generation}
+\label{gen}
+
+After training the model it is necessary to let notes be predicted by giving it a sequence of start notes. 
+
+- predict next note
+- was wird reingereicht
+- was wird predicted 
+- was ist temperature
+- das bild kommt raus 
+- sieht nach nicht viel aus weil lange toene 
+- vergleich der distribution
+- aehnliche verteilung wie bei dem ausgesuchten lied 
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{./pics/genNotes.PNG}
+\caption{Generated midi file}
+\label{fig:genNotes}    
+\end{figure}
+
+\begin{figure}
+
+\begin{minipage}{.5\linewidth}
+\centering
+\subfloat[]{\label{fig:test1}\includegraphics[scale=.5]{./pics/genPitch.PNG}}
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+\centering
+\subfloat[]{\label{fig:test2}\includegraphics[scale=.5]{./pics/genStep.PNG}}
+\end{minipage}\par
+\centering
+\subfloat[]{\label{fig:test3}\includegraphics[scale=.5]{./pics/genDuration.PNG}}
+
+\caption{Distribution of pitch, step and duration of generated music file}
+\label{fig:verteilung}   
+\end{figure}
+
+\section{Conclusion}
+\label{conc}
+
+- was wurde gemacht 
+- wie wurde es erreicht
+- was ist das ergebnis 
+
+-was haette besser laufen koennen
+  - mehr lieder
+  - mehr lieder die gleichen szenarien entsprechen
+  - harmony faellt weg
+  - akkorde 
+  - leider nur ein instrument
+  - 
+
+
+%\section{Section title}
+%\label{sec:1}
+%%Citations \cite{Ref1} and \cite{Ref2} and \cite{Ref3}.
+%\subsection{Subsection title}
+%\label{sec:2}
+%as required. Don't forget to give each section
+%and subsection a unique label (see Sect.~\ref{sec:1}).
+%\paragraph{Paragraph headings} Use paragraph headings as needed.
+%\begin{equation}
+%a^2+b^2=c^2
+%\end{equation}
+
+% For one-column wide figures use
+%\begin{figure}
+%\centering
 % Use the relevant command to insert your figure file.
 % For example, with the graphicx package use
-  \includegraphics{example.eps}
+%  \includegraphics{example.eps}
 % figure caption is below the figure
-\caption{Please write your figure caption here}
-\label{fig:1}       % Give a unique label
-\end{figure}
+%\caption{Please write your figure caption here}
+%\label{fig:1}       % Give a unique label
+%\end{figure}
 %
 % For two-column wide figures use
-\begin{figure*}
-\centering
+%\begin{figure*}
+%\centering
 % Use the relevant command to insert your figure file.
 % For example, with the graphicx package use
-  \includegraphics[width=0.75\textwidth]{example.eps}
+%  \includegraphics[width=0.75\textwidth]{example.eps}
 % figure caption is below the figure
-\caption{Please write your figure caption here}
-\label{fig:2}       % Give a unique label
-\end{figure*}
+%\caption{Please write your figure caption here}
+%\label{fig:2}       % Give a unique label
+%\end{figure*}
 %
 % For tables use
-\begin{table}[t]
+%\begin{table}[t]
 % table caption is above the table
-\caption{Please write your table caption here}
-\centering
-\label{tab:1}       % Give a unique label
+%\caption{Please write your table caption here}
+%\centering
+%\label{tab:1}       % Give a unique label
 % For LaTeX tables use
-\begin{tabular}{lll}
-\hline\noalign{\smallskip}
-first & second & third  \\[3pt]
-\tableheadseprule\noalign{\smallskip}
-number & number & number \\
-number & number & number \\
-\noalign{\smallskip}\hline
-\end{tabular}
-\end{table}
+%\begin{tabular}{lll}
+%\hline\noalign{\smallskip}
+%first & second & third  \\[3pt]
+%\tableheadseprule\noalign{\smallskip}
+%number & number & number \\
+%number & number & number \\
+%\noalign{\smallskip}\hline
+%\end{tabular}
+%\end{table}
 
 
 %\begin{acknowledgements}
@@ -258,10 +394,8 @@ number & number & number \\
 % etc
 %\end{thebibliography}
 
-\begin{authorbiography}{example.eps}{A.N. Author}\
-biography will be printed here if needed. Whether an author
-biography is included per author is set
-per journal. A photo is optional.
+\begin{authorbiography}{}{Tim Luecking}\
+
 \end{authorbiography}
 
 \end{document}

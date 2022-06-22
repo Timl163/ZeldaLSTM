@@ -1,12 +1,12 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.16)  19 JUN 2022 23:24
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.19)  23 JUN 2022 00:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **template
 (./template.tex
-LaTeX2e <2022-06-01> pre-release-0 (develop 2022-6-16 branch)
-L3 programming layer <2022-06-02>
+LaTeX2e <2022-06-01> patch level 1
+L3 programming layer <2022-06-16>
 
 LaTeX Info: File `example.eps' already exists on the system.
             Not generating it from this source.
@@ -111,7 +111,7 @@ Package: biograph 2004/07/08 v. 3.0
 ) (c:/texlive/2022/texmf-dist/tex/latex/mwe/mwe.sty
 Package: mwe 2018/03/30 v0.5 Package to support minimal working examples (MWE)
  (c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty (c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-06-02 L3 programming layer (loader) 
+Package: expl3 2022-06-16 L3 programming layer (loader) 
  (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-04-20 L3 backend support: XeTeX
 \g__graphics_track_int=\count273
@@ -120,7 +120,7 @@ File: l3backend-xetex.def 2022-04-20 L3 backend support: XeTeX
 \g__pdf_backend_annotation_int=\count275
 \g__pdf_backend_link_int=\count276
 ))
-Package: l3keys2e 2022-06-07 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2022-06-16 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count277
@@ -188,7 +188,34 @@ See the caption package documentation for explanation.
 \c@lotdepth=\count306
 \sf@top=\skip53
 \sf@bottom=\skip54
-) (./template.aux)
+)
+
+LaTeX Warning: Unused global option(s):
+    [twocolumn,fleqn,runningheads].
+
+(./template.aux
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test3' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:test3' multiply defined.
+
+
+LaTeX Warning: Label `fig:verteilung' multiply defined.
+
+)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -242,9 +269,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.09999> on input line 83.
 
-LaTeX Warning: Citation `test:1' on page 1 undefined on input line 97.
-
-
 Overfull \hbox (3.26381pt too wide) in paragraph at lines 103--107
 \TU/lmr/m/n/10.2 games, an AI should be trained to learn how the melodies
  []
@@ -265,36 +289,63 @@ File: ./pics/step.PNG Graphic file (type bmp)
 <./pics/step.PNG>
 File: ./pics/duration.PNG Graphic file (type bmp)
 <./pics/duration.PNG>
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--180
-
- []
-
 [1
 
 
 ]
-File: example.eps Graphic file (type eps)
-<example.eps>
-File: example.eps Graphic file (type eps)
-<example.eps>
+Underfull \vbox (badness 1448) has occurred while \output is active []
 
-No file template.bbl.
-File: example.eps Graphic file (type eps)
-<example.eps>
-[2] [3] (./template.aux)
+File: ./pics/model_plot.png Graphic file (type bmp)
+<./pics/model_plot.png>
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 212--213
+ [][] 
+ []
+
+[2]
+File: ./pics/Loss.PNG Graphic file (type bmp)
+<./pics/Loss.PNG>
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 257--258
+ [][] 
+ []
+
+File: ./pics/genNotes.PNG Graphic file (type bmp)
+<./pics/genNotes.PNG>
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 279--280
+ [][] 
+ []
+
+File: ./pics/genPitch.PNG Graphic file (type bmp)
+<./pics/genPitch.PNG>
+File: ./pics/genStep.PNG Graphic file (type bmp)
+<./pics/genStep.PNG>
+File: ./pics/genDuration.PNG Graphic file (type bmp)
+<./pics/genDuration.PNG>
+(./template.bbl
+Underfull \hbox (badness 5726) in paragraph at lines 10--12
+[]\TU/lmr/m/n/8.7 Home | Beethoven X - The AI Project.  URL
+ []
+
+) [3] [4
+
+] (./template.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65001pt have occurred.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 3515 strings out of 475885
- 66113 string characters out of 5806093
- 480776 words of memory out of 5000000
- 24546 multiletter control sequences out of 15000+600000
- 471154 words of font info for 43 fonts, out of 8000000 for 9000
+ 3567 strings out of 475883
+ 67165 string characters out of 5806043
+ 482792 words of memory out of 5000000
+ 24593 multiletter control sequences out of 15000+600000
+ 471146 words of font info for 42 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,12n,91p,314b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,12n,91p,314b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on template.pdf (3 pages).
+Output written on template.pdf (4 pages).
