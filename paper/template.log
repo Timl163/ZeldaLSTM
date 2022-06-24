@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.19)  23 JUN 2022 00:11
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.19)  24 JUN 2022 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -193,29 +193,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Unused global option(s):
     [twocolumn,fleqn,runningheads].
 
-(./template.aux
-
-LaTeX Warning: Label `fig:test1' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:test1' multiply defined.
-
-
-LaTeX Warning: Label `fig:test2' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:test2' multiply defined.
-
-
-LaTeX Warning: Label `fig:test3' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:test3' multiply defined.
-
-
-LaTeX Warning: Label `fig:verteilung' multiply defined.
-
-)
+(./template.aux)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -313,37 +291,39 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 257--258
 File: ./pics/genNotes.PNG Graphic file (type bmp)
 <./pics/genNotes.PNG>
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 279--280
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 283--284
  [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
 File: ./pics/genPitch.PNG Graphic file (type bmp)
 <./pics/genPitch.PNG>
 File: ./pics/genStep.PNG Graphic file (type bmp)
 <./pics/genStep.PNG>
 File: ./pics/genDuration.PNG Graphic file (type bmp)
 <./pics/genDuration.PNG>
-(./template.bbl
+ (./template.bbl
 Underfull \hbox (badness 5726) in paragraph at lines 10--12
 []\TU/lmr/m/n/8.7 Home | Beethoven X - The AI Project.  URL
  []
 
-) [3] [4
-
-] (./template.aux)
+)
+File: example.eps Graphic file (type eps)
+<example.eps>
+ [4] (./template.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65001pt have occurred.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 3567 strings out of 475883
- 67165 string characters out of 5806043
+ 3577 strings out of 475883
+ 67312 string characters out of 5806043
  482792 words of memory out of 5000000
- 24593 multiletter control sequences out of 15000+600000
+ 24603 multiletter control sequences out of 15000+600000
  471146 words of font info for 42 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  87i,12n,91p,314b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s

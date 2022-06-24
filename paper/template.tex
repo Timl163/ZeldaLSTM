@@ -262,16 +262,20 @@ The training took about an hour of GPU processing time. The final overall loss i
 \section{Music Generation}
 \label{gen}
 
-After training the model it is necessary to let notes be predicted by giving it a sequence of start notes. 
+After training the model it is necessary to let notes be predicted by giving it a sequence of start notes. A function is 
+written, that predicts the next note from a sequence of input notes. It uses the "predict" function of the tensorflow
+model that was trained before. The function is implemented not to just pick the note pitch with the highest probability.
+If the note with the highest probability would always be taken, the same input would generate the same next note. 
+To still have variaty in the generation a temperature parameter is given into the function. This temperatur parameter is used
+to create a small set of possible pitches for the next note. After that one of these notes gets randomly chosen.
+The step and the duration have to be positive. If negative values are predicted the value gets set to zero.
 
-- predict next note
-- was wird reingereicht
-- was wird predicted 
-- was ist temperature
-- das bild kommt raus 
-- sieht nach nicht viel aus weil lange toene 
-- vergleich der distribution
-- aehnliche verteilung wie bei dem ausgesuchten lied 
+To start the generation of multiple notes, a sequence of the trainingdata is used as an input to generate the next note.
+A note will be generated and saved in an array of generated notes. The input sequence is alterd by deleting the first
+note and appending the new generated one. The next note is generated and also saved. After generating the given
+amount of notes, the library "PrettyMidi" is used to create a Midi file out of the generated notes.
+
+One possible output is shown in Figure \ref{fig:genNotes}. 
 
 
 \begin{figure}
@@ -281,25 +285,42 @@ After training the model it is necessary to let notes be predicted by giving it 
 \label{fig:genNotes}    
 \end{figure}
 
+\section{Results}
+\label{res}
+
+The generated notes in Figure \ref{fig:genNotes} look like random generated notes. At the beginning there is 
+a cluster accord with a lot of short notes being played at the same time. A lot of the notes that were generated have 
+a high duration. In Figure \ref{fig:genNotes} it is not possible to see all the short notes that make up most of
+the song. Because of this, it is necessary to look at the distribution of all the notes of the song and compare these 
+with the distribution from the training data. In Figure \ref{fig:verteilunggen} the distribution divided up in 
+pitch, step and duration, is shown. 
+
+In Figure \ref{fig:test11} you can see a seperation of the low and high notes just like in the distribution of the training
+data. Zelda music (especially the battle music) uses the contrast of high and low notes to create tension. The step size and 
+the duration of the notes are close to the training data aswell. This indicates that the model did learn how the music
+of Zelda is composed and that it can predict notes that mimic this music.
+
 \begin{figure}
 
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[]{\label{fig:test1}\includegraphics[scale=.5]{./pics/genPitch.PNG}}
+\subfloat[]{\label{fig:test11}\includegraphics[scale=.5]{./pics/genPitch.PNG}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[]{\label{fig:test2}\includegraphics[scale=.5]{./pics/genStep.PNG}}
+\subfloat[]{\label{fig:test21}\includegraphics[scale=.5]{./pics/genStep.PNG}}
 \end{minipage}\par
 \centering
-\subfloat[]{\label{fig:test3}\includegraphics[scale=.5]{./pics/genDuration.PNG}}
+\subfloat[]{\label{fig:test31}\includegraphics[scale=.5]{./pics/genDuration.PNG}}
 
 \caption{Distribution of pitch, step and duration of generated music file}
-\label{fig:verteilung}   
+\label{fig:verteilunggen}   
 \end{figure}
 
 \section{Conclusion}
 \label{conc}
+
+
 
 - was wurde gemacht 
 - wie wurde es erreicht
@@ -394,8 +415,9 @@ After training the model it is necessary to let notes be predicted by giving it 
 % etc
 %\end{thebibliography}
 
-\begin{authorbiography}{}{Tim Luecking}\
-
+\begin{authorbiography}{example.eps}{Tim Luecking}\
+Hier kommt hin dass ich student an der fh bin und so. 
+also ganz kurz.
 \end{authorbiography}
 
 \end{document}
