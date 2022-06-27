@@ -6,8 +6,39 @@
   \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem{test:1}
+\bibitem{noauthor_generate_nodate}
+Generate music with an {RNN}  {\textbar}  {TensorFlow} {Core}.
+\newblock
+  \urlprefix\url{https://www.tensorflow.org/tutorials/audio/music_generation}
+
+\bibitem{abc}
 Home {\textbar} {Beethoven} {X} - {The} {AI} {Project}.
 \newblock \urlprefix\url{https://www.beethovenx-ai.com}
+
+\bibitem{noauthor_midis_nodate-1}
+{MIDIs} containing 'zelda' — {BitMidi}.
+\newblock \urlprefix\url{https://bitmidi.com/search?q=zelda}
+
+\bibitem{noauthor_tfdatadataset_nodate}
+tf.data.{Dataset} {\textbar} {TensorFlow} {Core} v2.9.1.
+\newblock
+  \urlprefix\url{https://www.tensorflow.org/api_docs/python/tf/data/Dataset}
+
+\bibitem{brownlee_impact_2019}
+Brownlee, J.: Impact of {Dataset} {Size} on {Deep} {Learning} {Model} {Skill}
+  {And} {Performance} {Estimates} (2019).
+\newblock
+  \urlprefix\url{https://machinelearningmastery.com/impact-of-dataset-size-on-deep-learning-model-skill-and-performance-estimates/}
+
+\bibitem{raffel_intuitive_2014-1}
+Raffel, C., Ellis, D.P.W.: {INTUITIVE} {ANALYSIS}, {CREATION} {AND}
+  {MANIPULATION} {OF} {MIDI} {DATA} {WITH} pretty\_midi.
+\newblock In 15th International Conference on Music Information Retrieval Late
+  Breaking and Demo Papers p.~2 (2014)
+
+\bibitem{wreglesworth_beginners_nodate}
+Wreglesworth, R.: A {Beginner}’s {Guide} {To} {MIDI}: {What} {Is} {It}? {How}
+  {Does} {It} {Work}?
+\newblock \urlprefix\url{https://musicianshq.com/a-beginners-guide-to-midi/}
 
 \end{thebibliography}

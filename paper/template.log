@@ -1,12 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.19)  24 JUN 2022 17:17
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.16)  26 JUN 2022 23:04
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**template
+**template.tex
 (./template.tex
-LaTeX2e <2022-06-01> patch level 1
-L3 programming layer <2022-06-16>
+LaTeX2e <2022-06-01> pre-release-0 (develop 2022-6-16 branch)
+L3 programming layer <2022-06-02>
 
 LaTeX Info: File `example.eps' already exists on the system.
             Not generating it from this source.
@@ -90,18 +89,23 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 152.
 \@tempcntc=\count272
 ) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
-) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 107.
- (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/xetex.def
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2022/04/16 v5.0m Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen150
@@ -110,9 +114,13 @@ File: xetex.def 2022/04/16 v5.0m Graphics/color driver for xetex
 Package: biograph 2004/07/08 v. 3.0
 ) (c:/texlive/2022/texmf-dist/tex/latex/mwe/mwe.sty
 Package: mwe 2018/03/30 v0.5 Package to support minimal working examples (MWE)
- (c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty (c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-06-16 L3 programming layer (loader) 
- (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+
+(c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-06-02 L3 programming layer (loader) 
+
+(c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-04-20 L3 backend support: XeTeX
 \g__graphics_track_int=\count273
 \l__pdf_internal_box=\box54
@@ -120,15 +128,18 @@ File: l3backend-xetex.def 2022-04-20 L3 backend support: XeTeX
 \g__pdf_backend_annotation_int=\count275
 \g__pdf_backend_link_int=\count276
 ))
-Package: l3keys2e 2022-06-16 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2022-06-07 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count277
 \l__lipsum_a_int=\count278
 \l__lipsum_b_int=\count279
- (c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (c:/texlive/2022/texmf-dist/tex/latex/blindtext/blindtext.sty
+
+(c:/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(c:/texlive/2022/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
- (c:/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
+
+(c:/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 \c@blindtext=\count280
@@ -149,11 +160,14 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@randommax=\count295
 \c@blind@pangramcount=\count296
 \c@blind@pangrammax=\count297
-)) (c:/texlive/2022/texmf-dist/tex/latex/subfig/subfig.sty
+))
+(c:/texlive/2022/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
- (c:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+
+(c:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2022/03/01 v3.6b Customizing captions (AR)
- (c:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+
+(c:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@tempdima=\dimen152
 \captionmargin=\dimen153
@@ -165,7 +179,12 @@ Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@hangindent=\dimen159
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
-Package caption Info: \@makecaption = \long macro:#1#2->\captionstyle \ifx \@captype \fig@type \vskip \figcapgap \fi \setbox \@tempboxa \hbox {{\floatlegendstyle #1\floatcounterend }\capstrut #2}\ifdim \wd \@tempboxa >\hsize {\floatlegendstyle #1\floatcounterend }\capstrut #2\par \else \hbox to\hsize {\leftlegendglue \unhbox \@tempboxa \hfil }\fi \ifx \@captype \fig@type \else \vskip \tabcapgap \fi  on input line 1176.
+Package caption Info: \@makecaption = \long macro:#1#2->\captionstyle \ifx \@ca
+ptype \fig@type \vskip \figcapgap \fi \setbox \@tempboxa \hbox {{\floatlegendst
+yle #1\floatcounterend }\capstrut #2}\ifdim \wd \@tempboxa >\hsize {\floatlegen
+dstyle #1\floatcounterend }\capstrut #2\par \else \hbox to\hsize {\leftlegendgl
+ue \unhbox \@tempboxa \hfil }\fi \ifx \@captype \fig@type \else \vskip \tabcapg
+ap \fi  on input line 1176.
 )
 
 Package caption Warning: Unknown document class (or package),
@@ -188,12 +207,7 @@ See the caption package documentation for explanation.
 \c@lotdepth=\count306
 \sf@top=\skip53
 \sf@bottom=\skip54
-)
-
-LaTeX Warning: Unused global option(s):
-    [twocolumn,fleqn,runningheads].
-
-(./template.aux)
+) (./template.aux)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -205,7 +219,8 @@ LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 59.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
+9.
  (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -247,17 +262,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.09999> on input line 83.
 
-Overfull \hbox (3.26381pt too wide) in paragraph at lines 103--107
+Overfull \hbox (3.26381pt too wide) in paragraph at lines 106--110
 \TU/lmr/m/n/10.2 games, an AI should be trained to learn how the melodies
  []
-
-
-LaTeX Warning: Citation `test:2' on page 1 undefined on input line 119.
 
 File: ./pics/fullSong.PNG Graphic file (type bmp)
 <./pics/fullSong.PNG>
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 126--127
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 129--130
  [][] 
  []
 
@@ -267,16 +279,17 @@ File: ./pics/step.PNG Graphic file (type bmp)
 <./pics/step.PNG>
 File: ./pics/duration.PNG Graphic file (type bmp)
 <./pics/duration.PNG>
-[1
+
+Underfull \vbox (badness 1406) has occurred while \output is active []
+
+ [1
 
 
 ]
-Underfull \vbox (badness 1448) has occurred while \output is active []
-
 File: ./pics/model_plot.png Graphic file (type bmp)
 <./pics/model_plot.png>
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 212--213
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 215--216
  [][] 
  []
 
@@ -284,14 +297,14 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 212--213
 File: ./pics/Loss.PNG Graphic file (type bmp)
 <./pics/Loss.PNG>
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 257--258
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 260--261
  [][] 
  []
 
 File: ./pics/genNotes.PNG Graphic file (type bmp)
 <./pics/genNotes.PNG>
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 283--284
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
@@ -305,27 +318,124 @@ File: ./pics/genStep.PNG Graphic file (type bmp)
 <./pics/genStep.PNG>
 File: ./pics/genDuration.PNG Graphic file (type bmp)
 <./pics/genDuration.PNG>
- (./template.bbl
-Underfull \hbox (badness 5726) in paragraph at lines 10--12
+
+Overfull \hbox (1.93895pt too wide) in paragraph at lines 334--346
+\TU/lmr/m/n/10.2 even though the generated music is not necessarily pleas-
+ []
+
+(./template.bbl
+! Missing $ inserted.
+<inserted text> 
+                $
+l.12 ...flow.org/tutorials/audio/music_generation}
+                                                  
+? 
+! Extra }, or forgotten $.
+\url #1->{#1}
+             
+l.12 ...flow.org/tutorials/audio/music_generation}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.13 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.13 
+     
+? 
+
+Overfull \hbox (9.9289pt too wide) in paragraph at lines 10--13
+\TU/lmr/m/n/8.7 https://www.tensorflow.org/tutorials/audio/music$[]\OML/cmm/m/i
+t/9 eneration[]$ 
+ []
+
+
+Underfull \hbox (badness 5726) in paragraph at lines 15--17
 []\TU/lmr/m/n/8.7 Home | Beethoven X - The AI Project.  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+[]\TU/lmr/m/n/8.7 MIDIs containing ’zelda’ — BitMidi.  URL
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.25 ...rflow.org/api_docs/python/tf/data/Dataset}
+                                                  
+? 
+! Extra }, or forgotten $.
+\url #1->{#1}
+             
+l.25 ...rflow.org/api_docs/python/tf/data/Dataset}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.26 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.26 
+     
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+[]\TU/lmr/m/n/8.7 tf.data.Dataset | TensorFlow Core v2.9.1.  URL
+ []
+
+
+Overfull \hbox (15.70387pt too wide) in paragraph at lines 23--26
+\TU/lmr/m/n/8.7 https://www.tensorflow.org/api$[]\OML/cmm/m/it/9 ocs=python=tf=
+data=Dataset[]$ 
+ []
+
+
+Underfull \hbox (badness 3612) in paragraph at lines 28--32
+\TU/lmr/m/n/8.7 ing Model Skill And Performance Estimates (2019).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--32
+\TU/lmr/m/n/8.7 URL https://machinelearningmastery.com/impact-of-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--32
+\TU/lmr/m/n/8.7 dataset-size-on-deep-learning-model-skill-and-performance-
  []
 
 )
 File: example.eps Graphic file (type eps)
 <example.eps>
- [4] (./template.aux)
+
+Underfull \vbox (badness 4132) has occurred while \output is active []
+
+ [4]
+[5
+
+] (./template.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65001pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 3577 strings out of 475883
- 67312 string characters out of 5806043
- 482792 words of memory out of 5000000
+ 3576 strings out of 475885
+ 67270 string characters out of 5806093
+ 483776 words of memory out of 5000000
  24603 multiletter control sequences out of 15000+600000
- 471146 words of font info for 42 fonts, out of 8000000 for 9000
+ 471130 words of font info for 40 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,12n,91p,314b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,12n,91p,318b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on template.pdf (4 pages).
+Output written on template.pdf (5 pages).

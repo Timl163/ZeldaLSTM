@@ -62,7 +62,7 @@ grestore
 %about the article that should go on the front page should be
 %placed here. General acknowledgments should be placed at the end of the article.}
 }
-\subtitle{idk what subtitle}
+%\subtitle{idk what subtitle}
 
 %\titlerunning{Short form of title}        % if too long for running head
 
@@ -76,14 +76,17 @@ grestore
               \email{tim.luecking1@fh-bielefeld.de}   
 }
 
-\date{Received: 27.06.2022 / Accepted: date}
+\date{Received: 27.06.2022 / Accepted: 27.06.2022}
 % The correct dates will be entered by the editor
 
 
 \maketitle
 
 \begin{abstract}
-ABstract kommt hier hin....... was schreibt man da
+An LSTM network is created and trained with music of the popular videogame series Zelda.
+The dataset and learning sequences are created. After training new music can be generated.
+The generated music lacks harmony but the distribution of the notes mirror the distribution
+of the trainingdata.
 
 \keywords{Zelda \and LSTM \and RNN \and Music \and Generation}
 \end{abstract}
@@ -94,7 +97,7 @@ ABstract kommt hier hin....... was schreibt man da
 Great musicians like Beethoven died before they could finish their last work. The legacy
 of Beethoven were 40 sketches for a 10th symphony. The project "Beethoven X - The AI 
 Project" used AI to complete the 10th symphony using those sketches in a style that
-mimics the ingenuity of Beethoven ~\cite{test:1}.
+mimics the ingenuity of Beethoven ~\cite{abc}.
 
 Projects like these are the best example for a usecase for AI generated music. It is not
 only possible to complete given note sequences, but also to generate completly new 
@@ -113,13 +116,13 @@ midi files are an easy way to train said AI. Midi (Musical Instrument Digital
 Interface) is a technical standard that describes a communication protocoll
 among other things to connect a wide variety of music instruments and other
 audio devices. It is used to play, edit and record music. The length, the
-velocity and frequency of each note is saved in a textual file format.
+velocity and frequency of each note is saved in a textual file format ~\cite{wreglesworth_beginners_nodate}.
 
 Midi files are an easy way to train an AI because of the numeric structure
-of the files. Websites like "BitMidi" ~\cite{test:2} offer a wide variaty 
+of the files. Websites like "BitMidi" ~\cite{noauthor_midis_nodate-1} offer a wide variaty 
 of free Midi files to download. 65 Single instrument songs from Zelda games 
 were downloaded and will be used hereinafter as the training data of the AI.
-In Figure ~\ref{fig:fullSong} is one of those midi songs displayed.
+In Figure \ref{fig:fullSong} is one of those midi songs displayed.
 
 \begin{figure}
 \centering
@@ -135,12 +138,12 @@ make predictions depending on a sequence of data. In terms of music this
 might mean that it can predict the next note by using a given sequence of 
 multiple notes, that were played before.
 
-With the help of the library "PrettyMidi" the Midi data is handled. All notes
+With the help of the library "PrettyMidi" the Midi data is handled ~\cite{raffel_intuitive_2014-1}. All notes
 from every Midi file is read and saved into an array. This array of tupels 
 consists of the the pitch, the duration and the step of each note (step meaning
 the length of the pause between the note and the note being played before).
 
-Figure ~\ref{fig:verteilung} shows the distribution of pitch, step and duration
+Figure \ref{fig:verteilung} shows the distribution of pitch, step and duration
 of all notes in the song "The Legend of Zelda - Death Mountain". The usage of 
 low notes in contrast to really high notes is one of the key elements of 
 the thrilling music of the Zelda games. Furthermore you can see, that the duration of
@@ -164,7 +167,7 @@ the notes are mostly short with only some outlier.
 \end{figure}
 
 So that the AI can be trained, the music data needs to be edited and sequences with a given 
-length need to be created. A tensorflow dataset is created and filled with all notes (pitch, step and duration).
+length need to be created. A tensorflow dataset is created and filled with all notes (pitch, step and duration) ~\cite{noauthor_generate_nodate}.
 To create sequences out of all the notes, the tensorflow dataset function "window" is used. It is used to 
 create sequence windows of all available data and works by only seeing a window of data with given size, saving
 it to a dataset of datasets and shifting the window to the next datapoint, creating a new window.
@@ -175,14 +178,14 @@ played before.
 
 After creating a dataset of datasets, it is necesarry to transform these into tensors, so that the network can
 use them. The function "flat\_map" creates tensors from the dataset. The function to create sequences also normilizes 
-the pitch of the notes to match the 128 possible pitches supported by "PrettyMidi". The new creates tensorflow dataset
+the pitch of the notes to match the 128 possible pitches supported by "PrettyMidi". The new created tensorflow dataset
 has a shape of (50, 3) meaning that the dataset has multiple sequences which consist of 50 notes each. The notes consist
 of three parameters (pitch, duration and step).
 
 The last part of preparing the dataset is to combine consecutive elements of the dataset into batches and to configure
 the dataset for performance. First the current dataset is shuffled and then saved in batches. After that the function
 "prefetch" is called on the dataset. It creates a new dataset that prefetches elements from this dataset. It allows later 
-elements to be prepared while the current element is being processed [quellellsflksdfhd].
+elements to be prepared while the current element is being processed ~\cite{noauthor_tfdatadataset_nodate}.
 
 \section{Model}
 \label{model}
@@ -194,13 +197,13 @@ to have three outputs, one for each note variable.
 A custom loss function for the step and the duration of the notes is needed. It is based on the mean squared error loss function
 with positive pressure to ensure, that the model predicts mostly positive values for the step and duration. 
 
-The complete used model is shown in Figure \ref{fig:model}. It consists of an input layer with the input shape of the training data.
+The complete model is shown in Figure \ref{fig:model}. It consists of an input layer with the input shape of the training data.
 Furthermore it uses multiple LSTM layers that take a sequence as an input and can either return a sequence or a matrix. Dropout layers are
 used to minimize overfitting the model because of the relativly small dataset used. Dropout layers randomly sets the input units to 0
 at each step during training. This way the model will not be prone to overfitting. Dense layers are fully connected neural network
 layers, where each input node is connected to each output node. Three dense layers are used as the output. The pitch output has 128 nodes 
 which represent all the notes that can be used by "PrettyMidi". The duration and step layer only have one output node which
-directly shows a float value. This value should be positive and a custum loss function with positive pressure is needed to train
+is a float value. This value should be positive and a custum loss function with positive pressure is needed to train
 for those outputs (s. o.). The loss function "SparseCategoricalCrossentropy" is used for the pitch. The model is compiled with
 an optimizer that implements the Adam algorithm and uses a learning rate of 0.0001.
 
@@ -230,7 +233,7 @@ are calculated:
 \end{itemize}
 
 The pitch loss is sigificant greater then the loss of step and duration. The overall loss is calculated by adding all losses together.
-To combat this, the model need to be compiled with loss weights. The pitch loss is multiplied by 0.05 and the following losses 
+To combat this, the model needs to be compiled with loss weights. The pitch loss is multiplied by 0.05 and the following losses 
 are calculated:
 
 \begin{itemize}
@@ -242,7 +245,7 @@ are calculated:
   \end{itemize}
 \end{itemize}
 
-Callback functions are used to create checkpoints of the model after aech epoch it is running through. The weights from the model
+Callback functions are used to create checkpoints of the model after each epoch it is running through. The weights from the model
 are saved and the training can be halted and continued to not loose progress. Early stopping is also configured, to stop the 
 training if multiple consecutive epochs do not lead to the reduction of the overall loss. This also helps if the loss suddenly
 jumps to a higher value. Lowering the learning rate helped combat negative jumps of the overall loss.
@@ -271,7 +274,7 @@ to create a small set of possible pitches for the next note. After that one of t
 The step and the duration have to be positive. If negative values are predicted the value gets set to zero.
 
 To start the generation of multiple notes, a sequence of the trainingdata is used as an input to generate the next note.
-A note will be generated and saved in an array of generated notes. The input sequence is alterd by deleting the first
+A note will be generated and saved in an array of generated notes. The input sequence is altered by deleting the first
 note and appending the new generated one. The next note is generated and also saved. After generating the given
 amount of notes, the library "PrettyMidi" is used to create a Midi file out of the generated notes.
 
@@ -320,20 +323,26 @@ of Zelda is composed and that it can predict notes that mimic this music.
 \section{Conclusion}
 \label{conc}
 
+An LSTM neural network was trained with music of the popular videogame series Zelda.
+65 Midi files from the videogame were used to train the model. Sequences of subsequent 
+notes were created for training. The model was trained for about 270 epochs before the 
+overall loss stagnated. By handing in a sequence of training data, it is possible to let
+the model predict the next note. Multiple generated notes are saved in a Midi file.
+The generated music does not sound great but the distribution of the generated notes
+mirror the distribution of the training data.
 
-
-- was wurde gemacht 
-- wie wurde es erreicht
-- was ist das ergebnis 
-
--was haette besser laufen koennen
-  - mehr lieder
-  - mehr lieder die gleichen szenarien entsprechen
-  - harmony faellt weg
-  - akkorde 
-  - leider nur ein instrument
-  - 
-
+In general the training of the model was a success even though the generated music is
+not necessarily pleasant to the human ear. The generated music has similarities with
+the training data, but also fluctuations of speed and additionally little harmony.
+One reason could be the limited size of the dataset. With a bigger dataset the AI would
+have been able to learn more and thus recreate the music with higher accuracy ~\cite{brownlee_impact_2019}.
+The created dataset also consists of music for tense and calm scenarios in the gameplay.
+The tense music is fast and has short notes that often alternate between high and low frequencies. 
+Calm songs often consist of high melodies with longer notes. This mix of genres might also 
+impair the generation of new notes.
+As said before the generated music has little harmony. The current midi library is not able 
+to detect accords in the file. Taking accords into account could improve the overall harmony
+of the generated music. 
 
 %\section{Section title}
 %\label{sec:1}
@@ -413,11 +422,11 @@ of Zelda is composed and that it can predict notes that mimic this music.
 %%Author, I., Smith, J.: Paper title. In: Editor, A. (ed.) Proceedings
 %Title, Location, Date, pages. Publisher, Place (year)
 % etc
+
 %\end{thebibliography}
 
 \begin{authorbiography}{example.eps}{Tim Luecking}\
-Hier kommt hin dass ich student an der fh bin und so. 
-also ganz kurz.
+Master student at the Bielefeld University of Applied Sciences, studying information technology.
 \end{authorbiography}
 
 \end{document}
